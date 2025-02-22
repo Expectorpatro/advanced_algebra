@@ -1,0 +1,226 @@
+\chapter{多项式}
+
+\section{多项式带余除法及整除}
+
+\subsection{证明多项式整除性的常用方法}
+\begin{enumerate}
+	\item \textbf{定义法} \\
+	要证$g(x)|f(x)$，去构造$h(x)$，使得$f(x)=h(x)g(x)$。常常将$f(x)$分解因式分解出$g(x)$，剩下的就是$h(x)$。
+	\item \textbf{带余除法定理} \\
+	要证$g(x)|f(x)$，只要证$g(x)$除$f(x)$的余式为$0$。
+	\item \textbf{准标准式分解法} \\
+	要证$g(x)|f(x)$，只要证它们的准标准分解式中的同一个不可约因式的方幂前者不大于后者。
+	\item \textbf{根法} \\
+	要证$g(x)|f(x)$，只要证在复数域中$g(x)$的根都是$f(x)$的根，重根按重数计算。
+\end{enumerate}
+
+\subsection{例题}
+\begin{theorem}
+	$f(x)=(x+1)^{k+n}+2x(x+1)^{k+n-1}+\cdots+(2x)^k(x+1)^n$，证明$x^{k+1}|(x-1)f(x)+(x+1)^{k+n+1}$。
+\end{theorem}
+\begin{proof}
+	因为：
+	\begin{align*}
+		f(x)
+		&=(x+1)^{k+n}+2x(x+1)^{k+n-1}+\cdots+(2x)^k(x+1)^n \\
+		&=(x+1)^n\Bigl[(x+1)^k+(2x)(x+1)^{k-1}+\cdots+(2x)^k\Bigr] \\
+		&=(x+1)^n[(x+1)+2x]^k
+	\end{align*}
+	因为$x-1=[2x-(x+1)]$，所以：
+	\begin{align*}
+		(x-1)f(x)+(x+1)^{k+n+1}
+		&=[2x-(x+1)](x+1)^n[(x+1)+2x]^k+(x+1)^{k+n+1} \\
+		&=(x+1)^n[2x-(x+1)][(x+1)+2x]^k+(x+1)^{k+n+1} \\
+	\end{align*}
+\end{proof}
+\begin{theorem}
+	证明$g(x)=1+x^2+\cdots+x^{2n}$整除$f(x)=1+x^4+x^8+\cdots+x^{4n}$的充分必要条件为$n$是偶数。
+\end{theorem}
+\begin{proof}
+	显然：
+	\begin{equation*}
+		g(x)=\frac{1-(x^2)^{n+1}}{1-x^2},\;f(x)=\frac{1-(x^4)^{n+1}}{1-x^4}
+	\end{equation*}
+	所以：
+	\begin{align*}
+		g(x)|f(x)
+		&\Leftrightarrow\frac{1-(x^2)^{n+1}}{1-x^2}\Big|\frac{1-(x^4)^{n+1}}{1-x^4} \\
+		&\Leftrightarrow(1+x^2)[1-(x^2)^{n+1}]\Big|[1-(x^4)^{n+1}] \\
+		&\Leftrightarrow(1+x^2)|[1+(x^2)^{n+1}] \\
+		&\Leftrightarrow1+x^2\text{的根}\pm i\text{都是}1+(x^2)^{n+1}\text{的根} \\ 
+		&\Leftrightarrow1+(-1)^{n+1}=0 \\
+		&\Leftrightarrow n\text{为偶数}\qedhere
+	\end{align*}
+\end{proof}
+\begin{theorem}
+	设$f(x),g(x)$为数域$K$上的多项式，$n\in\mathbb{Z}$。证明$f(x)|g(x)$的充分必要条件为$f^n(x)|g^n(x)$。
+\end{theorem}
+\begin{proof}
+	\textbf{(1)必要性：}若$f(x)|g(x)$，则存在数域$K$上的多项式$h(x)$使得$g(x)=h(x)f(x)$，于是$g^n(x)=h^n(x)f^n(x)$，所以$f^n(x)|g^n(x)$。\par
+	\textbf{(2)充分性：}将$f(x),g(x)$进行标准分解得到：
+	\begin{equation*}
+		f(x)=ap_1^{r_1}(x)\cdots p_m^{r_m}(x),\;
+		g(x)=bq_1^{t_1}(x)\cdots q_n^{t_n}(x)
+	\end{equation*}
+	于是：
+	\begin{equation*}
+		f^k(x)=a^kp_1^{kr_1}(x)\cdots p_m^{kr_m}(x),\;
+		g^k(x)=b^kq_1^{kt_1}(x)\cdots q_n^{kt_n}(x)
+	\end{equation*}
+	因为$f^k(x)|g^k(x)$，所以$f(x)$标准分解式中的任一元素$p_i(x),\;i=1,2,\dots,m$都是$g(x)$标准分解式中的元素（记为$q_{n_i}$），同时有$kr_i\leqslant kt_{n_i}$，即$r_i\leqslant t_{n_i}$，于是$f(x)|g(x)$。
+\end{proof}
+\begin{theorem}
+	$(x^d-1)|(x^n-1)$的充分必要条件为$d|n$。
+\end{theorem}
+\begin{proof}
+	\textbf{(1)充分性：}由$d|n$可知，存在正整数$k$使得$n=dk$。于是：
+	\begin{align*}
+		x^n-1=x^{dk}-1=\left(x^d\right)^k-1=(x^d-1)[x^{d(k-1)}+\cdots+11]
+	\end{align*}
+	所以$(x^d-1)|(x^n-1)$。\par
+	\textbf{(2)必要性：}由整数的带余除法定理，设$n=dq+r$，这里$r=0$或$0<r<d$。若$0<r<d$，则：
+	\begin{equation*}
+		x^n-1=x^{dq+r}-1=x^{dq}x^r-x^r+x^r-1=x^r(x^{dq}-1)+(x^r-1)
+	\end{equation*}
+	由充分性可知$(x^d-1)|(x^{dq}-1)$。而$(x^d-1)|(x^n-1)$。则$(x^d-1)|(x^r-1)$。于是$d\leqslant r$，矛盾。
+\end{proof}
+\begin{theorem}
+	设$h(x),k(x),f(x),g(x)$是实系数多项式，且：
+	\begin{gather*}
+		(x^2+1)h(x)+(x+1)f(x)+(x-2)g(x)=0 \\
+		(x^2+1)k(x)+(x-1)f(x)+(x+2)g(x)=0
+	\end{gather*}
+	则$(x^2+1)|f(x)$，且$(x^2+1)|g(x)$。
+\end{theorem}
+\begin{proof}
+	要证$(x^2+1)|f(x)$和$(x^2+1)|g(x)$，即证$\pm i$是$f(x)$和$g(x)$的根。将$x=\pm i$代入上式可得：
+	\begin{gather*}
+		(i+1)f(i)+(i-2)g(i)=0,\quad(i-1)f(i)+(i+2)g(i)=0 \\
+		(-i+1)f(-i)+(-i-2)g(-i)=0,\quad(-i-1)f(-i)+(-i+2)g(-i)=0
+	\end{gather*}
+	解方程可得：
+	\begin{equation*}
+		f(i)=g(i)=0,\;f(-i)=g(-i)=0
+	\end{equation*}
+	所以$(x-i)|f(x),\;(x+i)|f(x),\;(x-i)|g(x),\;(g+i)|f(x)$。因为$(x+i,x-i)=1$，所以$(x+i)(x-i)|f(x),\;(x+i)(x-i)|f(x)$，即$(x^2+1)|f(x),\;(x^2+1)|g(x)$。
+\end{proof}
+\begin{theorem}
+	对于任意$n\in\mathbb{N}^+$，都有$(x^2+x+1)\Big|[x^{n+2}+(x+1)^{2n+1}]$。
+\end{theorem}
+\begin{proof}
+	\textbf{方法一：}令$x^2+x+1=0$，求得它在复数域内的两个根分别为$x_1=\dfrac{-1+\sqrt{3}i}{2},\;x_2=\dfrac{-1-\sqrt{3}i}{2}$。将$x_1,\;x_2$代入到$x^{n+2}+(x+1)^{2n+1}$中可得：
+	\begin{equation*}
+		x^{n+2}+(x+1)^{2n+1}=x^2x^n+(x+1)\left(x^2\right)^n=0
+	\end{equation*}
+	于是$x_1,x_2$也是$x^{n+2}+(x+1)^{2n+1}$的根，所以$(x^2+x+1)\Big|[x^{n+2}+(x+1)^{2n+1}]$。\par
+	\textbf{方法二：}设$\alpha$为$x^2+x+1=0$的根，则$\alpha^2+\alpha+1=0$，两边同乘$\alpha-1$可得$\alpha^3=1$且$\alpha\ne1$。于是：
+	\begin{align*}
+		\alpha^{n+2}+(\alpha+1)^{2n+1}
+		&=\alpha^{n+2}+(-\alpha^2)^{2n+1} \\
+		&=\alpha^{n+2}+(-1)^{2n+1}\alpha^{4n+2} \\
+		&=\alpha^{n+2}-\alpha^{3n}\alpha^{n+2} \\
+		&=0
+	\end{align*}
+	于是$\alpha$是$x^{n+2}+(x+1)^{2n+1}=0$的根，所以$(x^2+x+1)\Big|[x^{n+2}+(x+1)^{2n+1}]$。
+\end{proof}
+\begin{theorem}
+	若$(s,n+1)=1$，则$f(x)=x^{sn}+x^{s(n-1)}+\cdots+x^s+1$可被$g(x)=x^n+x^{n-1}+\cdots+x+1$整除。
+\end{theorem}
+\begin{proof}
+	假设$\alpha$为$g(x)=0$的根，因为：
+	\begin{equation*}
+		g(x)=\frac{1-x^{n+1}}{1-x}
+	\end{equation*}
+	所以$\alpha^{n+1}=1$且$\alpha\ne1$。而：
+	\begin{equation*}
+		f(x)=\frac{1-(x^s)^{n+1}}{1-x^s}=\frac{1-(x^{n+1})^s}{1-x^s}
+	\end{equation*}
+	代入$\alpha^{n+1}=1$则显然$f(x)=0$，即$\alpha$也是$f(x)=0$的根，$g(x)|f(x)$。但是如果$\alpha$是$f(x)$的根，此时应有$\alpha^s\ne1$。若$\alpha^s=1$，因为$(s,n+1)=1$，则存在$u,v\in\mathbb{N}$，使得：
+	\begin{equation*}
+		us+v(n+1)=1
+	\end{equation*}
+	于是$\alpha=\alpha^{us+v(n+1)}=\alpha^{us}\alpha^{v(n+1)}=\alpha^{us}(\alpha^{n+1})^v=(\alpha^s)^u=1$，与$\alpha\ne1$矛盾，所以$\alpha^s-1\ne0$。
+\end{proof}
+\begin{theorem}
+	设$n\in\mathbb{N}^+$，$f_1(x),f_2(x),\dots,f_n(x)$都是多项式，并且有：
+	\begin{equation*}
+		x^n+x^{n-1}+\cdots+x+1|f_1(x^{n+1})+xf_2(x^{n+1})+\cdots+x^{n-1}f_n(x^{n+1})
+	\end{equation*}
+	证明$(x-1)^n|f_1(x),f_2(x),\dots,f_n(x)$。
+\end{theorem}
+\begin{proof}
+	设$x^{n+1}-1=0$的不为$1$的$n$个根分别为$\varepsilon_1,\varepsilon_2,\dots,\varepsilon_n$，此时有$\varepsilon_i^{n+1}-1=0,\;i=1,2,\dots,n$。对$x^{n+1}-1=0$作分解可得$x^n+x^{n-1}+\cdots+x+1=(x-\varepsilon_1)(x-\varepsilon_2)\cdots(x-\varepsilon_n)$，所以：
+	\begin{equation*}
+		x-\varepsilon_i\Big|x^n+x^{n-1}+\cdots+x+1\Big|f_1(x^{n+1})+xf_2(x^{n+1})+\cdots+x^{n-1}f_n(x^{n+1})
+	\end{equation*}
+	于是$\varepsilon_i,\;i=1,2,\dots,n$是$f_1(x^{n+1})+xf_2(x^{n+1})+\cdots+x^{n-1}f_n(x^{n+1})=0$的根，所以：
+	\[
+	\begin{cases}
+		f_1(\varepsilon_1^{n+1}) + \varepsilon_1 f_2(\varepsilon_1^{n+1}) + \cdots + \varepsilon_1^{n-1} f_n(\varepsilon_1^{n+1}) = 0 \\
+		f_1(\varepsilon_2^{n+1}) + \varepsilon_2 f_2(\varepsilon_2^{n+1}) + \cdots + \varepsilon_2^{n-1} f_n(\varepsilon_2^{n+1}) = 0 \\
+		\vdots \\
+		f_1(\varepsilon_n^{n+1}) + \varepsilon_n f_2(\varepsilon_n^{n+1}) + \cdots + \varepsilon_n^{n-1} f_n(\varepsilon_n^{n+1}) = 0
+	\end{cases}
+	\]
+	即：
+	\[
+	\begin{cases}
+		f_1(1) + \varepsilon_1 f_2(1) + \cdots + \varepsilon_1^{n-1} f_n(1) = 0 \\
+		f_1(1) + \varepsilon_2 f_2(1) + \cdots + \varepsilon_2^{n-1} f_n(1) = 0 \\
+		\vdots \\
+		f_1(1) + \varepsilon_n f_2(1) + \cdots + \varepsilon_n^{n-1} f_n(1) = 0
+	\end{cases}
+	\]
+	将$f_i(1),\;i=1,2,\dots,n$看作未知数，因为$\varepsilon_i\ne\varepsilon_j,\;i\ne j$，所以该线性方程组的系数行列式为：
+	\[
+	\det(A) =
+	\begin{vmatrix}
+		1 & \varepsilon_1 & \varepsilon_1^2 & \cdots & \varepsilon_1^{n-1} \\
+		1 & \varepsilon_2 & \varepsilon_2^2 & \cdots & \varepsilon_2^{n-1} \\
+		\vdots & \vdots & \vdots & \ddots & \vdots \\
+		1 & \varepsilon_n & \varepsilon_n^2 & \cdots & \varepsilon_n^{n-1}
+	\end{vmatrix}
+	= \prod_{1 \leq i < j \leq n} (\varepsilon_j - \varepsilon_i)
+	\ne 0
+	\]
+	所以该线性方程组只有零解，即$f_i(1)=0,\;i=1,2,\dots,n$。
+\end{proof}
+\begin{theorem}
+	求多项式$f(x)$，使得$(x^2+1)|f(x)$且$(x^3+x^2+1)|f(x)+1$。
+\end{theorem}
+\begin{proof}
+	由整除的定义，存在多项式$g(x),h(x)$使得
+	\begin{gather*}
+		f(x)=(x^2+1)g(x) \\
+		f(x)+1=(x^3+x^2+1)h(x)
+	\end{gather*}
+	由条件可知$\pm i$是$f(x)$的根，将$\pm i$分别代入上第二式可得：
+	\begin{gather*}
+		1=-ih(i),\;1=ih(-i)
+	\end{gather*}
+	取$h(x)=x$发现可以满足上式要求，于是$f(x)=x^4+x^3+x-1$。
+\end{proof}
+\begin{theorem}
+	求$7$次多项式$f(x)$，使得$(x-1)^4|f(x)+1$，且$(x+1)^4|f(x)-1$。
+\end{theorem}
+\begin{proof}
+	因为$(x-1)^4|f(x)+1$，所以$1$至少是$f(x)+1$的四重根，于是$1$至少是$f'(x)$的三重根，即$(x-1)^3|f(x)$。同理可得$(x+1)^3|f'(x)$。因为$\Bigl((x-1)^3,(x+1)^2\Bigr)=1$，所以$(x-1)^3(x+1)^3|f'(x)$。因为$f'(x)$是六次多项式，可设：
+	\begin{equation*}
+		f'(x)=\alpha(x-1)^3(x+1)^3
+	\end{equation*}
+	其中$\alpha$为常数。对上式积分可得：
+	\begin{equation*}
+		f(x)=\alpha\left(\frac{1}{7}x^7-\frac{3}{5}x^5+x^3-x\right)+c
+	\end{equation*}
+	因为$(x-1)^4|f(x)+1,\;(x+1)^4|f(x)-1$，所以$f(1)=-1,\;f(-1)=1$，代入上式可解得：
+	\begin{equation*}
+		\begin{cases}
+			a=\dfrac{35}{16} \\
+			c=0
+		\end{cases}
+	\end{equation*}
+	所以：
+	\begin{equation*}
+		f(x)=\frac{5}{16}x^7-\frac{21}{16}x^5+\frac{35}{16}x^3-\frac{35}{16}x
+	\end{equation*}
+\end{proof}

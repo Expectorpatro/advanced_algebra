@@ -1,0 +1,4 @@
+\contentsline {chapter}{\numberline {第一章\hspace {.3em}}多项式}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}多项式带余除法及整除}{1}{section.1.1}%
+\contentsline {subsection}{\numberline {1.1.1}证明多项式整除性的常用方法}{1}{subsection.1.1.1}%
+\contentsline {subsection}{\numberline {1.1.2}例题}{1}{subsection.1.1.2}%
