@@ -2,3 +2,17 @@
 \contentsline {section}{\numberline {1.1}多项式带余除法及整除}{1}{section.1.1}%
 \contentsline {subsection}{\numberline {1.1.1}证明多项式整除性的常用方法}{1}{subsection.1.1.1}%
 \contentsline {subsection}{\numberline {1.1.2}例题}{1}{subsection.1.1.2}%
+\contentsline {section}{\numberline {1.2}最大公因式与互素多项式}{6}{section.1.2}%
+\contentsline {subsection}{\numberline {1.2.1}基本定义与定理}{6}{subsection.1.2.1}%
+\contentsline {subsection}{\numberline {1.2.2}题型}{6}{subsection.1.2.2}%
+\contentsline {subsubsection}{求具体多项式最大公因式}{6}{subsection.1.2.2}%
+\contentsline {subsubsection}{证明最大公因式}{7}{Item.11}%
+\contentsline {subsubsection}{证明多项式的互素}{7}{Item.16}%
+\contentsline {subsection}{\numberline {1.2.3}例题}{8}{subsection.1.2.3}%
+\contentsline {subsubsection}{求具体多项式的最大公因式}{8}{subsection.1.2.3}%
+\contentsline {subsubsection}{证明最大公因式}{8}{section*.4}%
+\contentsline {subsubsection}{证明多项式的互素}{10}{section*.6}%
+\contentsline {section}{\numberline {1.3}多项式的根}{11}{section.1.3}%
+\contentsline {subsection}{\numberline {1.3.1}题型}{11}{subsection.1.3.1}%
+\contentsline {subsubsection}{重根的证明}{11}{subsection.1.3.1}%
+\contentsline {subsection}{\numberline {1.3.2}例题}{11}{subsection.1.3.2}%

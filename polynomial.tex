@@ -23,15 +23,19 @@
 	\begin{align*}
 		f(x)
 		&=(x+1)^{k+n}+2x(x+1)^{k+n-1}+\cdots+(2x)^k(x+1)^n \\
-		&=(x+1)^n\Bigl[(x+1)^k+(2x)(x+1)^{k-1}+\cdots+(2x)^k\Bigr] \\
-		&=(x+1)^n[(x+1)+2x]^k
+		&=(x+1)^n\Bigl[(x+1)^k+(2x)(x+1)^{k-1}+\cdots+(2x)^k\Bigr]
 	\end{align*}
 	因为$x-1=[2x-(x+1)]$，所以：
 	\begin{align*}
 		(x-1)f(x)+(x+1)^{k+n+1}
-		&=[2x-(x+1)](x+1)^n[(x+1)+2x]^k+(x+1)^{k+n+1} \\
-		&=(x+1)^n[2x-(x+1)][(x+1)+2x]^k+(x+1)^{k+n+1} \\
+		&=[2x-(x+1)](x+1)^n\Bigl[(x+1)^k+(2x)(x+1)^{k-1}+\cdots+(2x)^k\Bigr] \\
+		&\quad+(x+1)^{k+n+1} \\
+		&=(x+1)^n[2x-(x+1)]\Bigl[(x+1)^k+(2x)(x+1)^{k-1}+\cdots+(2x)^k\Bigr] \\
+		&\quad+(x+1)^{k+n+1} \\
+		&=(x+1)^n[(2x)^{k+1}-(x+1)^{k+1}]+(x+1)^{k+n+1} \\
+		&=(2x)^{k+1}(x+1)^n
 	\end{align*}
+	显然有$x^{k+1}|(x-1)f(x)+(x+1)^{k+n+1}$。
 \end{proof}
 \begin{theorem}
 	证明$g(x)=1+x^2+\cdots+x^{2n}$整除$f(x)=1+x^4+x^8+\cdots+x^{4n}$的充分必要条件为$n$是偶数。
@@ -102,7 +106,7 @@
 	\begin{equation*}
 		f(i)=g(i)=0,\;f(-i)=g(-i)=0
 	\end{equation*}
-	所以$(x-i)|f(x),\;(x+i)|f(x),\;(x-i)|g(x),\;(g+i)|f(x)$。因为$(x+i,x-i)=1$，所以$(x+i)(x-i)|f(x),\;(x+i)(x-i)|f(x)$，即$(x^2+1)|f(x),\;(x^2+1)|g(x)$。
+	所以$(x-i)|f(x),\;(x+i)|f(x),\;(x-i)|g(x),\;(x+i)|g(x)$。因为$(x+i,x-i)=1$，所以$(x+i)(x-i)|f(x),\;(x+i)(x-i)|f(x)$，即$(x^2+1)|f(x),\;(x^2+1)|g(x)$。
 \end{proof}
 \begin{theorem}
 	对于任意$n\in\mathbb{N}^+$，都有$(x^2+x+1)\Big|[x^{n+2}+(x+1)^{2n+1}]$。
@@ -146,7 +150,7 @@
 	\begin{equation*}
 		x^n+x^{n-1}+\cdots+x+1|f_1(x^{n+1})+xf_2(x^{n+1})+\cdots+x^{n-1}f_n(x^{n+1})
 	\end{equation*}
-	证明$(x-1)^n|f_1(x),f_2(x),\dots,f_n(x)$。
+	证明$(x-1)^n|f_1(x)f_2(x)f_n(x)$。
 \end{theorem}
 \begin{proof}
 	设$x^{n+1}-1=0$的不为$1$的$n$个根分别为$\varepsilon_1,\varepsilon_2,\dots,\varepsilon_n$，此时有$\varepsilon_i^{n+1}-1=0,\;i=1,2,\dots,n$。对$x^{n+1}-1=0$作分解可得$x^n+x^{n-1}+\cdots+x+1=(x-\varepsilon_1)(x-\varepsilon_2)\cdots(x-\varepsilon_n)$，所以：
@@ -183,7 +187,7 @@
 	= \prod_{1 \leq i < j \leq n} (\varepsilon_j - \varepsilon_i)
 	\ne 0
 	\]
-	所以该线性方程组只有零解，即$f_i(1)=0,\;i=1,2,\dots,n$。
+	所以该线性方程组只有零解，即$f_i(1)=0$，于是$x-1|f_i(x),\;i=1,2,\dots,n$，所以$(x-1)^n|f_1(x)f_2(x)f_n(x)$。
 \end{proof}
 \begin{theorem}
 	求多项式$f(x)$，使得$(x^2+1)|f(x)$且$(x^3+x^2+1)|f(x)+1$。
@@ -204,7 +208,7 @@
 	求$7$次多项式$f(x)$，使得$(x-1)^4|f(x)+1$，且$(x+1)^4|f(x)-1$。
 \end{theorem}
 \begin{proof}
-	因为$(x-1)^4|f(x)+1$，所以$1$至少是$f(x)+1$的四重根，于是$1$至少是$f'(x)$的三重根，即$(x-1)^3|f(x)$。同理可得$(x+1)^3|f'(x)$。因为$\Bigl((x-1)^3,(x+1)^2\Bigr)=1$，所以$(x-1)^3(x+1)^3|f'(x)$。因为$f'(x)$是六次多项式，可设：
+	因为$(x-1)^4|f(x)+1$，所以$1$至少是$f(x)+1$的四重根，于是$1$至少是$f'(x)$的三重根，即$(x-1)^3|f(x)$。同理可得$(x+1)^3|f'(x)$。因为$\Bigl((x-1)^3,(x+1)^3\Bigr)=1$，所以$(x-1)^3(x+1)^3|f'(x)$。因为$f'(x)$是六次多项式，可设：
 	\begin{equation*}
 		f'(x)=\alpha(x-1)^3(x+1)^3
 	\end{equation*}
@@ -224,3 +228,296 @@
 		f(x)=\frac{5}{16}x^7-\frac{21}{16}x^5+\frac{35}{16}x^3-\frac{35}{16}x
 	\end{equation*}
 \end{proof}
+
+\section{最大公因式与互素多项式}
+\subsection{基本定义与定理}
+\begin{definition}
+	设$f(x),g(x),d(x)\in K[x]$，若：
+	\begin{enumerate}
+		\item $d(x)|f(x),g(x)$；
+		\item 若任意的$\varphi(x)|f(x),g(x)$，都有$\varphi(x)|d(x)$；
+	\end{enumerate}
+	则称$d(x)$为$f(x),g(x)$的最大公因式。用$\Bigl(f(x),g(x)\Bigr)$表示$f(x)$和$g(x)$首项系数为$1$的最大公因式。
+\end{definition}
+\begin{theorem}[最大公因式定理]
+	$K[x]$上的任意两个多项式$f(x),g(x)$都有最大公因式，并且$f(x)$和$g(x)$的任意一个最大公因式$d(x)$都可以表示为$f(x)$与$g(x)$的一个组合，即：
+	\begin{equation*}
+		\exists\;u(x),v(x)\in K[x],\;u(x)f(x)+v(x)g(x)=d(x)
+	\end{equation*}
+\end{theorem}
+\begin{theorem}
+	若$f(x)=g(x)q(x)+r(x),\;g(x)\ne 0$，则$\Bigl(f(x),g(x)\Bigr)=\Bigl(g(x),r(x)\Bigr)$。
+\end{theorem}
+\begin{definition}
+	设$f(x),g(x)\in K[x]$，若$\Bigl(f(x),g(x)\Bigr)=1$，则称$f(x)$和$g(x)$互素。
+\end{definition}
+\begin{theorem}
+	$\Bigl(f(x),g(x)\Bigr)=1$的充分必要条件为：
+	\begin{equation*}
+		\exists\;u(x),v(x)\in K[x],\;u(x)f(x)+v(x)g(x)=1
+	\end{equation*}
+\end{theorem}
+\begin{theorem}
+	若$\Bigl(f(x),g(x)\Bigr)=1$，且$f(x)|g(x)h(x)$，则$f(x)|h(x)$。
+\end{theorem}
+\begin{theorem}
+	若$\Bigl(f(x),g(x)\Bigr)=1$，且$f(x)|h(x),\;g(x)|h(x)$，则$f(x)g(x)|h(x)$。
+\end{theorem}
+\begin{theorem}\label{theo:CoprimeProduct}
+	若$\Bigl(f(x),g(x)\Bigr)=1,\;\Bigl(f(x),h(x)\Bigr)=1$，则$\Bigl(f(x),g(x)h(x)\Bigr)=1$。
+\end{theorem}
+\begin{theorem}
+	数域的扩张不影响最大公因式和互素。
+\end{theorem}
+\subsection{题型}
+\subsubsection{求具体多项式最大公因式}
+\begin{enumerate}
+	\item \textbf{辗转相除法}
+	\begin{enumerate}
+		\item 计算 \( f(x) \) 除以 \( g(x) \)，得到商 \( q(x) \) 和余数 \( r(x) \)，即：
+		\[
+		f(x) = g(x) \cdot q(x) + r(x)
+		\]
+		其中，\( r(x) \) 是多项式的余数，且满足 \( \deg(r(x)) < \deg(g(x)) \)。
+		
+		\item 如果余数 \( r(x) = 0 \)，则 \( g(x) \) 就是 \( f(x) \) 和 \( g(x) \) 的最大公因式。
+		
+		\item 如果余数 \( r(x) \neq 0 \)，则将 \( f(x) \) 赋值为 \( g(x) \)，将 \( g(x) \) 赋值为 \( r(x) \)，然后返回第 1 步。
+	\end{enumerate}
+	\item \textbf{因式分解法} \\
+	如果求得$f(x),g(x)$在数域$K$上的标准分解式：
+	\begin{equation*}
+		f(x)=ap_1^{r_1}(x)\cdots p_m^{r_m}(x),\;
+		g(x)=bq_1^{t_1}(x)\cdots q_n^{t_n}(x)
+	\end{equation*}
+	二者最大的公共部分即为$f(x),g(x)$的最大公因式。
+\end{enumerate}
+\subsubsection{证明最大公因式}
+\begin{enumerate}
+	\item \textbf{定义法} \\
+	要证$d(x)$是$f(x),g(x)$的最大公因式，只要证：
+	\begin{enumerate}
+		\item $d(x)$是$f(x),g(x)$的公因式；
+		\item 以下二者的任意一条：
+		\begin{itemize}
+			\item 找到$u(x),v(x)$使得$u(x)f(x)+v(x)g(x)=d(x)$；
+			\item 对$f(x),g(x)$的任意公因式$\varphi(x)$，有$\varphi(x)|d(x)$。
+		\end{itemize}
+	\end{enumerate}
+	\item \textbf{标准分解式法} \\
+	从标准分解式中找最大公因式。
+	\item \textbf{利用最大公因式的性质和等式}
+\end{enumerate}
+\subsubsection{证明多项式的互素}
+\begin{enumerate}
+	\item \textbf{定义法} \\
+	证明$\Bigl(f(x),g(x)\Bigr)=1$。
+	\item 只要证明：
+	\begin{equation*}
+		\exists\;u(x),v(x)\in K[x],\;u(x)f(x)+v(x)g(x)=1
+	\end{equation*}
+	\item \textbf{根法} \\
+	证明在复数域上$f(x)$的根都不是$g(x)$的根（重根按重述计算）。
+	\item \textbf{反证法} \\ 
+	若$\Bigl(f(x),g(x)\Bigr)=d(x)\ne1$，则可以由：
+	\begin{itemize}
+		\item $f(x),g(x)$有公共根
+		\item $d(x)|f(x)$，则$d(x)|g(x)$ 
+	\end{itemize}
+	推出矛盾。
+	\item \textbf{互素的性质及等式} \\
+	性质6、7、8。
+\end{enumerate}
+
+\subsection{例题}
+\subsubsection{求具体多项式的最大公因式}
+\begin{theorem}
+	设$f(x)=3x^5+5x^4-4x^3-16x^3-6x^2-5x-6,\;g(x)=3x^4-4x^3-x^2-x-2$，求：
+	\begin{enumerate}
+		\item $\Bigl(f(x),g(x)\Bigr)$；
+		\item 多项式$u(x),v(x)$使得$u(x)f(x)+v(x)g(x)=\Bigl(f(x),g(x)\Bigr)$。
+	\end{enumerate}
+\end{theorem}
+\begin{proof}
+	(1)\info{辗转相除法在latex里面很难搞，不想打了}$\Bigl(f(x),g(x)\Bigr)=x+\frac{2}{3}$。\par
+	(2)将辗转相除法的过程倒推即可求得：
+	\begin{equation*}
+		u(x)=-\frac{1}{3}(x^2-x-1),\;v(x)=\frac{1}{3}(x^3+2x^2-5x-4)\qedhere
+	\end{equation*}
+\end{proof}
+\subsubsection{证明最大公因式}
+\begin{theorem}\label{example:1.19}
+	证明：$\Bigl(f(x)h(x),g(x)h(x)\Bigr)=\Bigl(f(x),g(x)\Bigr)h(x)$，其中$h(x)$是首项系数为$1$的多项式。
+\end{theorem}
+\begin{proof}
+	令$d(x)=\Bigl(f(x),g(x)\Bigr)$，则有$d(x)|f(x),\;d(x)|g(x)$，从而$d(x)h(x)|f(x)h(x),\;d(x)h(x)|g(x)h(x)$，所以$\Bigl(f(x),g(x)\Bigr)h(x)$是$f(x)h(x),g(x)h(x)$的一个公因式。\par
+	因为$d(x)=\Bigl(f(x),g(x)\Bigr)$，所以
+	\begin{equation*}
+		\exists\;u(x),v(x)\in K[x],\;u(x)f(x)+v(x)g(x)=d(x)
+	\end{equation*}
+	于是$u(x)h(x)f(x)+v(x)h(x)g(x)=d(x)f(x)$，$d(x)h(x)$是$f(x)h(x),g(x)h(x)$的最大公因式。因为$d(x)=\Bigl(f(x),g(x)\Bigr)$，所以它的首项系数为$1$，而$h(x)$的首项系数也是$1$，于是$\Bigl(f(x)h(x),g(x)h(x)\Bigr)=\Bigl(f(x),g(x)\Bigr)h(x)$。
+\end{proof}
+\begin{theorem}
+	设$f_1(x)=af(x)+bg(x),\;g_1(x)=cf(x)+dg(x)$，且有$ad-bc\ne0$。证明$\Bigl(f(x),g(x)\Bigr)=\Bigl(f_1(x),g_1(x)\Bigr)$。
+\end{theorem}
+\begin{proof}
+	令$d(x)=\Bigl(f(x),g(x)\Bigr)$，则有$d(x)|f(x),\;d(x)|g(x)$，于是$d(x)|af(x)+bg(x),cf(x)+dg(x)$，即$d(x)|f_1(x),g_1(x)$，于是$\Bigl(f(x),g(x)\Bigr)$是$f_1(x),g_1(x)$的一个公因式。\par
+	因为$d(x)=\Bigl(f(x),g(x)\Bigr)$，所以
+	\begin{equation*}
+		\exists\;u(x),v(x)\in K[x],\;u(x)f(x)+v(x)g(x)=d(x)
+	\end{equation*}
+	因为$ad-bc\ne0$，所以关于$f(x),g(x)$的方程组：
+	\begin{equation*}
+		\begin{cases}
+			af(x)+bg(x)=f_1(x) \\
+			cf(x)+dg(x)=g_1(x)
+		\end{cases}
+	\end{equation*}
+	有唯一解，可解得：
+	\begin{equation*}
+		f(x)=\frac{1}{ad-bc}[df_1(x)-bg_1(x)],\;g(x)=\frac{1}{ad-bc}[-cf_1(x)+ag_1(x)]
+	\end{equation*}
+	于是：
+	\begin{gather*}
+		u(x)\frac{1}{ad-bc}[df_1(x)-bg_1(x)]+v(x)\frac{1}{ad-bc}[-cf_1(x)+ag_1(x)]=d(x)
+	\end{gather*}
+	化简可得：
+	\begin{equation*}
+		\frac{du(x)-cv(x)}{ad-bc}f_1(x)+\frac{av(x)-bu(x)}{ad-bc}g_1(x)=d(x)
+	\end{equation*}
+	即$d(x)=\Bigl(f(x),g(x)\Bigr)$是$f_1(x),g_1(x)$的最大公因式。因为$\Bigl(f(x),g(x)\Bigr)$首项系数为$1$，所以$\Bigl(f(x),g(x)\Bigr)=\Bigl(f_1(x),g_1(x)\Bigr)$。
+\end{proof}
+\begin{theorem}
+	设$f(x),g(x)\in K[x]$，且$\Bigl(f(x),g(x)\Bigr)=1$，又$\varphi(x)=(x^3-1)f(x)+(x^3-x^2+x-1)g(x)$，$\psi(x)=(x^2-1)f(x)+(x^2-x)g(x)$，则$\Bigl(\varphi(x),\psi(x)\Bigr)=x-1$。
+\end{theorem}
+\begin{proof}
+	由因式分解可得：
+	\begin{gather*}
+		\varphi(x)=(x-1)[(x^2+x+1)f(x)+(x^2+1)g(x)] \\
+		\psi(x)=(x-1)[(x+1)f(x)+xg(x)]
+	\end{gather*}
+	所以$x-1$是$\varphi(x)$和$\psi(x)$的一个公因式。由\cref{example:1.19}可知：
+	\begin{equation*}
+		\Bigl(\varphi(x),\psi(x)\Bigr)=\Bigl((x^2+x+1)f(x)+(x^2+1)g(x),(x+1)f(x)+xg(x)\Bigr)(x-1)
+	\end{equation*}
+	接下来只需证明$\Bigl((x^2+x+1)f(x)+(x^2+1)g(x),(x+1)f(x)+xg(x)\Bigr)=1$。\par
+	考虑以$f(x),g(x)$为自变量的方程组：
+	\begin{equation*}
+		\begin{cases}
+			\varphi(x)=(x^3-1)f(x)+(x^3-x^2+x-1)g(x) \\
+			\psi(x)=(x^2-1)f(x)+(x^2-x)g(x)
+		\end{cases}
+	\end{equation*}
+	其系数行列式为$-x^3-x^2+2x+1$，由Cramer法则可知\info{没搞懂}
+\end{proof}
+\begin{theorem}
+	设$f(x),g(x)$是两个不全为$0$的多项式，则$\forall\;n\in N$，有$\Bigl(f(x),g(x)\Bigr)^n=\Bigl(f^n(x),g^n(x)\Bigr)$。
+\end{theorem}
+\begin{proof}
+	令$d(x)=\Bigl(f(x),g(x)\Bigr)$，则存在$f_1(x),g_1(x)\in K[x]$，使得：
+	\begin{equation*}
+		f(x)=d(x)f_1(x),\;g(x)=d(x)g_1(x)
+	\end{equation*}
+	同时有$\Bigl(f_1(x),g_1(x)\Bigr)=1$\info{为什么？需要给出严格证明}，从而$\Bigl(f_1^n(x),g_1^n(x)\Bigr)=1$，所以：
+	\begin{align*}
+		\Bigl(f^n(x),g^n(x)\Bigr)
+		&=\Bigl(d^n(x)f_1^n(x),d^n(x)g_1^n(x)\Bigr) \\
+		&=\Bigl(f_1^n(x),g_1^n(x)\Bigr)d^n(x) \\
+		&=\Bigl(f(x),g(x)\Bigr)^n
+	\end{align*}
+	其中第一行到第二行利用到了\cref{example:1.19}。
+\end{proof}
+\subsubsection{证明多项式的互素}
+\begin{theorem}
+	设$f_1(x),f_2(x),\dots,f_m(x),g_1(x),g_2(x),\dots,g_n(x)\in K[x]$，则：
+	\begin{equation*}
+		\Bigl(f_1(x)f_2(x)\cdots f_m(x),g_1(x)g_2(x)\cdots g_n(x)\Bigr)=1\Leftrightarrow\Bigl(f_i(x),g_j(x)\Bigr)=1
+	\end{equation*}
+	其中$i=1,2,\dots,m,\;j=1,2,\dots,n$。
+\end{theorem}
+\begin{proof}
+	\textbf{(1)必要性：}因为$\Bigl(f_1(x)f_2(x)\cdots f_m(x),g_1(x)g_2(x)\cdots g_n(x)\Bigr)$，所以$\exists\;u(x),v(x)\in K[x]$使得：
+	\begin{equation*}
+		u(x)f_1(x)f_2(x)\cdots f_m(x)+v(x)g_1(x)g_2(x)\cdots g_n(x)=1
+	\end{equation*}
+	即：
+	\begin{equation*}
+		f_i(x)[u(x)f_1(x)\cdots f_{i-1}(x)f_{i+1}(x)\cdots f_m(x)]+g_j(x)[v(x)g_1(x)\cdots g_{j-1}(x)g_{j+1}(x)\cdots g_n(x)]=1
+	\end{equation*}
+	所以$\Bigl(f_i(x),g_j(x)\Bigr)=1$，其中$i=1,2,\dots,m,\;j=1,2,\dots,n$。\par
+	\textbf{(2)充分性：}取$f_1(x)$，因为$\Bigl(f_1(x),g_j(x)\Bigr)=1,\;i=1,2,\dots,n$，由\cref{theo:CoprimeProduct}可得，$\Bigl(f_1(x),g_1(x)\cdots g_n(x)\Bigr)=1$。同理可得对任意的$i=1,2,\dots,m$，都有$\Bigl(f_i(x),g_1(x)\cdots g_n(x)\Bigr)=1$，再利用\cref{theo:CoprimeProduct}即可得到$\Bigl(f_1(x)f_2(x)\cdots f_m(x),g_1(x)g_2(x)\cdots g_n(x)\Bigr)=1$。
+\end{proof}
+\begin{theorem}
+	对$\forall\;n\in\mathbb{N}^+$，令$f_n(x)=x^{n+2}-(x+1)^{2n+1}$，有$\Bigl(x^2+x+1,f_n(x)\Bigr)=1$。
+\end{theorem}
+\begin{proof}
+	设$\alpha$是$x^2+x+1=0$的根，则$\alpha^2+\alpha+1=0$，$\alpha^3=1$。于是：
+	\begin{align*}
+		f_n(\alpha)
+		&=\alpha^{n+2}-(\alpha+1)^{2n+1} \\
+		&=\alpha^{n+2}-(-\alpha^2)^{2n+1} \\
+		&=\alpha^{n+2}+\alpha^{4n+2} \\
+		&=\alpha^{n+2}+\alpha^{3n}\alpha^{n+2} \\
+		&=2\alpha^{n+2}
+	\end{align*}
+	在复数域内求解方程$x^2+x+1=0$可得：
+	\begin{equation*}
+		x_1=\frac{-1+\sqrt{3}i}{2},\;x_2=\frac{-1-\sqrt{3}i}{2}
+	\end{equation*}
+	所以$f_n(\alpha)=2\alpha^{n+2}\ne0$，即$\alpha$不是$f_n(x)$的根。由上我们得到$x^2+x+1=0$的根都不是$f_n(x)$的根，所以$\Bigl(x^2+x+1,f_n(x)\Bigr)=1$。
+\end{proof}
+\begin{theorem}
+	$f(x)=x^{m-1}+x^{m-2}+\cdots+x+1,\;g(x)=x^{n-1}+x^{n-2}+\cdots+x+1$，其中$m,n\in\mathbb{N}$，则有：
+	\begin{equation*}
+		(m,n)=1\Leftrightarrow\Bigl(f(x),g(x)\Bigr)=1
+	\end{equation*}
+\end{theorem}
+\begin{proof}
+	\textbf{(1)充分性：}若$(m,n)=d\ne1$，设$m=ds,\;n=dt$，则：
+	\begin{align*}
+		f(x)
+		&=\frac{x^m-1}{x-1}=\frac{x^{ds}-1}{x-1} \\
+		&=\frac{x^d-1}{x-1}[x^{d(s-1)}+x^{d(s-2)}+\cdots+x^d+1] \\
+		&=(x^{d-1}+\cdots+x+1)[x^{d(s-1)}+x^{d(s-2)}+\cdots+x^d+1]
+	\end{align*}
+	而：
+	\begin{align*}
+		g(x)
+		&=\frac{x^n-1}{x-1}=\frac{x^{dt}-1}{x-1} \\
+		&=\frac{x^d-1}{x-1}[x^{d(t-1)}+x^{d(t-2)}+\cdots+x^d+1] \\
+		&=(x^{d-1}+\cdots+x+1)[x^{d(t-1)}+x^{d(t-2)}+\cdots+x^d+1]
+	\end{align*}
+	可以发现$f(x)$与$g(x)$有次数大于$0$的公因式$x^{d-1}+\cdots+x+1$，与$\Bigl(f(x),g(x)\Bigr)=1$矛盾，所以$(m,n)=1$。\par
+	\textbf{(2)必要性：}若$\Bigl(f(x),g(x)\Bigr)=d(x)\ne1$，则$f(x),g(x)$有公共根$\alpha$。由$n$次方差公式可得：
+	\begin{gather*}
+		\alpha^m-1=(\alpha-1)(x^{m-1}+x^{m-2}+\cdots+x+1)=0 \\
+		\alpha^n-1=(\alpha-1)(x^{n-1}+x^{n-2}+\cdots+x+1)=0
+	\end{gather*}
+	于是$\alpha^m=\alpha^n=1$，且有$\alpha\ne1$。由$(m,n)=1$可知，存在$u,v\in\mathbb{N}$使得$um+vn=1$，于是：
+	\begin{equation*}
+		\alpha=\alpha^{um+vn}=(\alpha^m)^u(\alpha^n)^v=1
+	\end{equation*}
+	矛盾，所以$\Bigl(f(x),g(x)\Bigr)=1$，。
+\end{proof}
+
+\section{多项式的根}
+\subsection{题型}
+\subsubsection{重根的证明}
+\begin{enumerate}
+	\item \textbf{互素法}
+	\begin{itemize}
+		\item 若$f(x)$是一个复多项式，则$f(x)$无重根的充分必要条件是$\Bigl(f(x),f'(x)\Bigr)=1$。
+		\item 若$f(x)$是一般数域$K$上的多项式，若$\Bigl(f(x),f'(x)\Bigr)=1$，则$f(x)$无重因式，自然无重根。
+	\end{itemize}
+	\item \textbf{反证法}
+\end{enumerate}
+
+\subsection{例题}
+\begin{theorem}
+	如果$f'(x)|f(x)$，证明：$f(x)$有$n$重根，其中$n=\partial(f(x))$
+\end{theorem}
+
+
+
+
+
