@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.10.18)  2 MAR 2025 22:16
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.10.18)  6 MAR 2025 09:20
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1650,9 +1650,21 @@ n/10.95 )[] =
 
 
 
-[10])
+[10]
 
-[11] (./main.aux (./polynomial.aux))
+[11]
+
+[12]
+
+[13]
+
+[14]
+
+[15]
+
+[16])
+
+[17] (./main.aux (./polynomial.aux))
  ***********
 LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2022/07/14>
@@ -1661,16 +1673,22 @@ L3 programming layer <2022/07/14>
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 145B44C8AE34D4B73A869F4EC2596ABE;1106.
+
+Package rerunfilecheck Warning: File `main.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `main.out':
+(rerunfilecheck)             Before: D9FEB07C6174ECB669FF4D1509A21FBC;1422
+(rerunfilecheck)             After:  0E52317E86B492EC04E9E8D3B208393F;1532.
  ) 
 Here is how much of TeX's memory you used:
- 38263 strings out of 476182
- 829023 string characters out of 5785972
- 1365350 words of memory out of 5000000
- 60134 multiletter control sequences out of 15000+600000
+ 38307 strings out of 476182
+ 831793 string characters out of 5785972
+ 1364350 words of memory out of 5000000
+ 60178 multiletter control sequences out of 15000+600000
  569517 words of font info for 128 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 126i,12n,124p,3309b,1025s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 126i,12n,124p,3309b,1059s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on main.pdf (15 pages).
+Output written on main.pdf (21 pages).
