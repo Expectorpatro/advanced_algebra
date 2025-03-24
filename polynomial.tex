@@ -774,5 +774,31 @@
 		&=\cos\frac{2(n-k)\pi}{n}+i\sin\frac{2(n-k)\pi}{n} \\
 		&=\varepsilon_{n-k}
 	\end{align*}
-	因为$\varepsilon_k+\varepsilon_{n-k}=2\cos\frac{2k\pi}{n}$
+	因为$\varepsilon_k+\varepsilon_{n-k}=2\cos\frac{2k\pi}{n},\;\varepsilon_k\overline{\varepsilon}_k=1$，当$n$为奇数时，$x^n-1$恰有一个实根$\varepsilon_0=1$，所以：
+	\begin{align*}
+		x^n-1
+		&=(x-1)(x-\varepsilon_1)(x-\varepsilon_2)\cdots(x-\varepsilon_\frac{n-1}{2})(x-\varepsilon_\frac{n+1}{2})\cdots(x-\varepsilon_{n-2})(x-\varepsilon_{n-1}) \\
+		&=(x-1)(x-\varepsilon_1)(x-\varepsilon_2)\cdots(x-\varepsilon_\frac{n-1}{2})(x-\overline{\varepsilon}_\frac{n-1}{2})\cdots(x-\overline{\varepsilon}_2)(x-\overline{\varepsilon}_1) \\
+		&=(x-1)(x-\varepsilon_1)(x-\overline{\varepsilon}_1)(x-\varepsilon_2)(x-\overline{\varepsilon}_2)\cdots(x-\varepsilon_\frac{n-1}{2})(x-\overline{\varepsilon}_\frac{n-1}{2}) \\
+		&=(x-1)[x^2-(\varepsilon_1+\overline{\varepsilon}_1)x+\varepsilon_1\overline{\varepsilon}_1][x^2-(\varepsilon_2+\overline{\varepsilon}_2)x+\varepsilon_2\overline{\varepsilon}_2]\cdots \\
+		&\quad[x^2-(\varepsilon_\frac{n-1}{2}+\overline{\varepsilon}_\frac{n-1}{2})x+\varepsilon_\frac{n-1}{2}\overline{\varepsilon}_\frac{n-1}{2}] \\
+		&=(x-1)\left(x^2-2\cos\frac{2\pi}{n}x+1\right)\left(x^2-2\cos\frac{4\pi}{n}x+1\right)\cdots\left(x^2-2\cos\frac{(n-1)\pi}{n}x+1\right) \\
+		&=(x-1)\prod_{i=1}^{\frac{n-1}{2}}\left(x^2-2\cos\frac{2k\pi}{n}x+1\right)
+	\end{align*}
+	当$n$为偶数时，$x^n-1$有两个1实根$\varepsilon_0=1,\;\varepsilon_\frac{n}{2}=-1$，所以：
+	\begin{align*}
+		x^n-1
+		&=(x-1)(x-\varepsilon_1)(x-\varepsilon_2)\cdots(x-\varepsilon_\frac{n-2}{2})(x-\varepsilon_\frac{n}{2})(x-\varepsilon_\frac{n+2}{2})\cdots(x-\varepsilon_{n-2})(x-\varepsilon_{n-1}) \\
+		&=(x-1)(x-\varepsilon_1)(x-\varepsilon_2)\cdots(x-\varepsilon_\frac{n-2}{2})(x+1)(x-\overline{\varepsilon}_\frac{n-2}{2})\cdots(x-\overline{\varepsilon}+2)(x-\overline{\varepsilon}_1) \\
+		&=(x-1)(x+1)(x-\varepsilon_1)(x-\overline{\varepsilon}_1)(x-\varepsilon_2)(x-\overline{\varepsilon}_2)\cdots(x-\varepsilon_\frac{n-2}{2})(x-\overline{\varepsilon}_\frac{n-2}{2}) \\
+		&=(x-1)(x+1)\left(x^2-2\cos\frac{2\pi}{n}x+1\right)\left(x^2-2\cos\frac{4\pi}{n}x+1\right)\cdots\left(x^2-2\cos\frac{(n-2)\pi}{n}x+1\right) \\
+		&=(x-1)(x+1)\prod_{k=1}^{\frac{n-2}{2}}\left(x^2-2\cos\frac{2k\pi}{n}x+1\right)\qedhere
+	\end{align*}
+\end{proof}
+
+\begin{theorem}
+	求多项式$f(x)=x^n+x^{n-1}+\cdots+x+1$在实数域和复数域中的标准分解式。
+\end{theorem}
+\begin{proof}
+	令$g(x)=(x-1)f(x)$。	
 \end{proof}
