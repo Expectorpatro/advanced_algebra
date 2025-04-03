@@ -34,3 +34,9 @@
 \contentsline {subsubsection}{其它}{28}{theorem.2.22}%
 \contentsline {subsubsection}{行列式乘法及其应用}{30}{theorem.2.33}%
 \contentsline {subsubsection}{求解行列式方程}{30}{theorem.2.35}%
+\contentsline {chapter}{\numberline {第三章\hspace {.3em}}矩阵}{35}{chapter.3}%
+\contentsline {section}{\numberline {3.1}求矩阵的幂}{36}{section.3.1}%
+\contentsline {section}{\numberline {3.2}求矩阵的逆矩阵}{37}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}抽象矩阵求逆}{38}{subsection.3.2.1}%
+\contentsline {section}{\numberline {3.3}伴随矩阵}{40}{section.3.3}%
+\contentsline {section}{\numberline {3.4}矩阵的秩}{41}{section.3.4}%

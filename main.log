@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.10.18)  24 MAR 2025 11:37
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.10.18)  3 APR 2025 09:34
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1425,7 +1425,7 @@ text;"
 Package xeCJK Warning: Redefining CJKfamily `\CJKrmdefault' (SimSun(0)).
 
 Package hyperref Info: Option `colorlinks' set `true' on input line 106.
-) (./main.aux (./polynomial.aux) (./determinant.aux))
+) (./main.aux (./polynomial.aux) (./determinant.aux) (./matrix.aux))
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 6.
@@ -1449,9 +1449,11 @@ LaTeX Font Info:    ... okay on input line 6.
 LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 6.
 LaTeX Font Info:    ... okay on input line 6.
 Package hyperref Info: Link coloring ON on input line 6.
- (./main.out) (./main.out)
+
+(./main.out) (./main.out)
 \@outlinefile=\write6
 \openout6 = `main.out'.
+
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: xetex
@@ -1730,9 +1732,42 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 [29]
 
-[30])
+[30]
 
-[31] (./main.aux (./polynomial.aux) (./determinant.aux))
+[31]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[32]
+
+[33])
+
+[34]
+\openout2 = `matrix.aux'.
+
+ (./matrix.tex
+第三章
+
+
+[35
+
+
+
+
+]
+
+[36]
+
+[37]
+
+[38]
+
+[39]
+
+[40])
+
+[41] (./main.aux (./polynomial.aux) (./determinant.aux) (./matrix.aux))
  ***********
 LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2022/07/14>
@@ -1742,15 +1777,15 @@ L3 programming layer <2022/07/14>
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 83D2C39C878574165AC5AA3DFDAD6909;1600.
+(rerunfilecheck)             Checksum: 6FD99384C460DA0500773C7117D669F0;2150.
  ) 
 Here is how much of TeX's memory you used:
- 38416 strings out of 476182
- 834353 string characters out of 5785972
- 1376992 words of memory out of 5000000
- 60273 multiletter control sequences out of 15000+600000
+ 38442 strings out of 476182
+ 834893 string characters out of 5785972
+ 1383875 words of memory out of 5000000
+ 60293 multiletter control sequences out of 15000+600000
  570446 words of font info for 131 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
  126i,20n,124p,3309b,1059s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on main.pdf (35 pages).
+Output written on main.pdf (45 pages).

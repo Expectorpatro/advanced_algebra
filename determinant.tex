@@ -781,3 +781,203 @@
 \begin{proof}
 	观察法：$x=a_1,a_2,\dots,a_n$
 \end{proof}
+\begin{theorem}
+	计算行列式：
+	\begin{equation*}
+		D_n=
+		\begin{vmatrix}
+			x & y & \cdots & y & y \\
+			z & x & \cdots & y & y \\
+			\vdots & \vdots & \ddots & \vdots & \vdots \\
+			z & z & \cdots & x & y \\
+			z & z & \cdots & z & x
+		\end{vmatrix}
+	\end{equation*}
+\end{theorem}
+\begin{proof}
+	分类讨论，当$y=z$时化为行和相同的行列式。当$y\ne z$时：
+	\begin{align*}
+		D_n&=
+		\begin{vmatrix}
+			x & y & \cdots & y & 0 \\
+			z & x & \cdots & y & 0 \\
+			\vdots & \vdots & \ddots & \vdots & \vdots \\
+			z & z & \cdots & x & 0 \\
+			z & z & \cdots & z & x-y 
+		\end{vmatrix}
+		+
+		\begin{vmatrix}
+			x & y & \cdots & y & y \\
+			z & x & \cdots & y & y \\
+			\vdots & \vdots & \ddots & \vdots & \vdots \\
+			z & z & \cdots & x & y \\
+			z & z & \cdots & z & y
+		\end{vmatrix} \\
+		&=(x-y)D_{n-1}+
+		\begin{vmatrix}
+			x-z & y-x & \cdots & 0 & 0 \\
+			0 & x-z & \cdots & 0 & 0 \\
+			\vdots & \vdots & \ddots & \vdots & \vdots \\
+			0 & 0 & \cdots & x-z & 0 \\
+			z & z & \cdots & z & y
+		\end{vmatrix} \\
+		&=(x-y)D_{n-1}+y(x-z)^{n-1}
+	\end{align*}
+	而由$D_n$的转置可以得到：
+	\begin{equation*}
+		D_n=(x-z)D_{n-1}+z(x-y)^{n-1}
+	\end{equation*}
+	于是：
+	\begin{equation*}
+		\begin{cases}
+			D_n-(x-y)D_{n-1}=y(x-z)^{n-1} \\
+			D_n-(x-z)D_{n-1}=z(x-y)^{n-1}
+		\end{cases}
+	\end{equation*}
+	由Cramer法则可以解得：
+	\begin{equation*}
+		D_n=\frac{z(x-y)^n-y(x-z)^n}{z-y}
+	\end{equation*}
+\end{proof}
+\begin{theorem}
+	计算行列式：
+	\begin{equation*}
+		D_n=
+		\begin{vmatrix}
+			x_1 & \alpha & \cdots & \alpha & \alpha \\
+			\beta & x_2 & \cdots & \alpha & \alpha \\
+			\vdots & \vdots & \ddots & \vdots & \vdots \\
+			\beta & \beta & \cdots & x_{n-1} & \alpha \\
+			\beta & \beta & \cdots & \beta & x_n
+		\end{vmatrix}
+	\end{equation*}
+\end{theorem}
+\begin{proof}
+	当$\alpha\ne\beta$时的情况与上一题可以一样。当$\alpha=\beta$时有：
+	\begin{align*}
+		D_n&=
+		\begin{vmatrix}
+			x_1 & \alpha & \cdots & \alpha & \alpha \\
+			\alpha & x_2 & \cdots & \alpha & \alpha \\
+			\vdots & \vdots & \ddots & \vdots & \vdots \\
+			\alpha & \alpha & \cdots & x_{n-1} & \alpha \\
+			\alpha & \alpha & \cdots & \alpha & x_n
+		\end{vmatrix} \\
+		&=
+		\begin{vmatrix}
+			1 & 1 & 1 & 1 & 1 & 1 \\
+			0 & x_1 & \alpha & \cdots & \alpha & \alpha \\
+			0 & \alpha & x_2 & \cdots & \alpha & \alpha \\
+			\vdots & \vdots & \vdots & \ddots & \vdots & \vdots \\
+			0 & \alpha & \alpha & \cdots & x_{n-1} & \alpha \\
+			0 & \alpha & \alpha & \cdots & \alpha & x_n
+		\end{vmatrix} \\
+		&=
+		\begin{vmatrix}
+			1 & 1 & 1 & \cdots & 1 & 1 \\
+			-\alpha & x_1-\alpha & 0 & \cdots & 0 & 0 \\
+			-\alpha & 0 & x_2 & \cdots & 0 & 0 \\
+			\vdots & \vdots & \vdots & \ddots & \vdots & \vdots \\
+			-\alpha & 0 & 0 & \cdots & x_{n-1}-\alpha & 0 \\
+			-\alpha & 0 & 0 & \cdots & 0 & x_n-\alpha
+		\end{vmatrix}\qedhere
+	\end{align*}
+\end{proof}
+\begin{theorem}
+	计算行列式：
+	\begin{equation*}
+		D_n=
+		\begin{vmatrix}
+			0 & a_1+a_2 & \cdots & a_1+a_n \\
+			a_2+a_1 & 0 & \cdots & a_2+a_n \\
+			\vdots & \vdots & \ddots & \vdots \\
+			a_n+a_1 & a_n+a_2 & \cdots & 0
+		\end{vmatrix}
+	\end{equation*}
+\end{theorem}
+\begin{proof}
+	加边：
+	\begin{align*}
+		D_n&=
+		\begin{vmatrix}
+			1 & a_1 & a_2 & \cdots & a_n \\
+			0 & 0 & a_1+a_2 & \cdots & a_1+a_n \\
+			0 & a_2+a_1 & 0 & \cdots & a_2+a_n \\
+			\vdots & \vdots & \vdots & \ddots & \vdots \\
+			0 & a_n+a_1 & a_n+a_2 & \cdots & 0
+		\end{vmatrix} \\
+		&=
+		\begin{vmatrix}
+			1 & a_1 & a_2 & \cdots & a_n \\
+			-1 & -a_1 & a_1 & \cdots & a_1 \\
+			-1 & a_2 & -a_2 & \cdots & a_2 \\
+			\vdots & \vdots & \vdots & \ddots & \vdots \\
+			-1 & a_n & a_n & \cdots & -a_n
+		\end{vmatrix} \\
+		&=
+		\begin{vmatrix}
+			1 & 0 & 0 & 0 & \cdots & 0 \\
+			0 & 1 & a_1 & a_2 & \cdots & a_n \\
+			a_1 & -1 & -a_1 & a_1 & \cdots & a_1 \\
+			a_2 & -1 & a_2 & -a_2 & \cdots & a_2 \\
+			\vdots & \vdots & \vdots & \vdots & \ddots & \vdots \\
+			a_n & -1 & a_n & a_n & \cdots & -a_n
+		\end{vmatrix} \\
+		&=
+		\begin{vmatrix}
+			1 & 0 & -1 & -1 & \cdots & -1 \\
+			0 & 1 & a_1 & a_2 & \cdots & a_n \\
+			a_1 & -1 & -2a_1 & 0 & \cdots & 0 \\
+			a_2 & -1 & 0 & -2a_2 & \cdots & 0 \\
+			\vdots & \vdots & \vdots & \vdots & \ddots & \vdots \\
+			a_n & -1 & 0 & 0 & \cdots & -2a_n
+		\end{vmatrix} \\
+	\end{align*}
+	把前两列的第三行到第$n+2$行全部化为0。
+\end{proof}
+\begin{theorem}
+	求行列式：
+	\begin{equation*}
+		D_n=
+		\begin{vmatrix}
+			1 & -1 & \cdots & -1 & -1 \\
+			1 & 1 & \cdots & -1 & -1 \\
+			\vdots & \vdots & \ddots & \vdots & \vdots \\
+			1 & 1 & \cdots & 1 & -1 \\
+			1 & 1 & \cdots & 1 & 1
+		\end{vmatrix}
+	\end{equation*}
+	的展开式中正项的数目。
+\end{theorem}
+\begin{proof}
+	设正项总数为$x$，则负项总数为$n!-x$。考虑到展开式中每一项不是$1$就是$-1$，所以：
+	\begin{equation*}
+		D=x-(n!-x)=2x-n!
+	\end{equation*}
+	由之前的公式求出$D$，代入即可解得$x$。
+\end{proof}
+\begin{theorem}
+	计算行列式：
+	\begin{equation*}
+		D=
+		\begin{vmatrix}
+			1-ax_1y_1 & -ax_1y_2 & \cdots & -ax_1y_n \\
+			-ax_2y_1 & 1-ax_2y_2 & \cdots & -ax_2y_n \\
+			\vdots & \vdots & \ddots & \vdots \\
+			-ax_ny_1 & -ax_ny_2 & \cdots & 1-ax_ny_n
+		\end{vmatrix}
+	\end{equation*}
+\end{theorem}
+\begin{proof}
+	加边：
+	\begin{align*}
+		D&=
+		\begin{vmatrix}
+			1 & y_1 & y_2 \cdots & y_n \\
+			0 & 1-ax_1y_1 & -ax_1y_2 & \cdots & -ax_1y_n \\
+			0 & -ax_2y_1 & 1-ax_2y_2 & \cdots & -ax_2y_n \\
+			\vdots & \vdots & \vdots & \ddots & \vdots \\
+			0 & -ax_ny_1 & -ax_ny_2 & \cdots & 1-ax_ny_n
+		\end{vmatrix}\qedhere
+	\end{align*}
+\end{proof}
